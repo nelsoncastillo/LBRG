@@ -3,7 +3,7 @@
 include_once ("../php/conexion.php");
 $tabla='alumnos';
 //$this->tabla= $tabla;
-$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 $cadena="SELECT  distinct (a.attname) as column_name, t.typname as data_type, e.ordinal_position as orden,
 CASE
 WHEN cc.contype= 'p' THEN 'PRI'

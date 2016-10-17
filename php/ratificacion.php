@@ -29,7 +29,7 @@ public $_observaciones;
 
 	// aqui puede buscar el ultimo de la tabla para tener el siguiente id disponible....
 	public function Ultimo(){
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT MAX(id) as maximo FROM ratificaciones";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -46,7 +46,7 @@ public $_observaciones;
 	}
 	
 	public function Buscar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM ratificaciones where id = '$id';";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -62,7 +62,7 @@ public $_observaciones;
 	}
 	
 	public function Eliminar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM ratificaciones WHERE id='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	}	
@@ -70,7 +70,7 @@ public $_observaciones;
 	public function Agregar($id,$fecha_ratificacion,$id_inscripcion,$docente_ratifica,$observaciones){
 		//falta
 	//$id no deberia saberlo el usuario	
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "INSERT INTO ratificaciones 
 	(id, fecha_ins_rat, id_inscripcion, docente_ratifica, observaciones) 
 	VALUES ('$id','$fecha_ratificacion','$id_inscripcion','$docente_ratifica','$observaciones')";
@@ -81,7 +81,7 @@ public $_observaciones;
 
 	public function Actualizar($id,$fecha_ratificacion,$id_inscripcion,$docente_ratifica,$observaciones){
 		//falta
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "UPDATE ratificaciones 
 	SET id='$id', fecha_ins_rat='$fecha_ratificacion', id_inscripcion='$id_inscripcion', 
 	docente_ratifica='$docente_ratifica', observaciones='$observaciones' 
@@ -91,7 +91,7 @@ public $_observaciones;
 		}
 
 	public function Cargar($id){//listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM ratificaciones where id= $id";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc==-1){

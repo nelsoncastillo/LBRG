@@ -45,7 +45,7 @@ public function __construct(){
 		}
 	
 	public function Ultimo(){
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT MAX(id) as maximo FROM viviendas";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -62,7 +62,7 @@ public function __construct(){
 	}
 	
 	public function Buscar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM viviendas where id = '$id';";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -78,7 +78,7 @@ public function __construct(){
 	}
 	
 	public function Eliminar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM viviendas WHERE id='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	}	
@@ -86,7 +86,7 @@ public function __construct(){
 	public function Agregar($id,$tipo,$ubicacion,$nombre_ubicacion,$condiciones,$via,$nombre_via,$direccion,$telefono){
 		//falta
 	//$id no deberia saberlo el usuario	
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "INSERT INTO viviendas(id, tipo, ubicacion, nombre_ubicacion, condiciones, via, nombre_via, direccion, telefono) VALUES ('$id','$tipo','$ubicacion','$nombre_ubicacion','$condiciones','$via','$nombre_via','$direccion','$telefono')";
 	// deve validar que se afecto la tabla, 
 	if($resultadoc = $con->consultar($cadena)==-1) echo "Error agregando registro en tabla grupos";	
@@ -95,14 +95,14 @@ public function __construct(){
 
 	public function Actualizar($id,$tipo,$ubicacion,$nombre_ubicacion,$condiciones,$via,$nombre_via,$direccion,$telefono){
 		//falta
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "UPDATE viviendas SET id=$id, tipo='$tipo', ubicacion='$ubicacion', nombre_ubicacion='$nombre_ubicacion', condiciones='$condiciones', via='$via', nombre_via='$nombre_via', direccion='$direccion', telefono='$telefono' WHERE id='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	if($resultadoc==-1) echo "Error actualizando registro en tabla procedencias";	
 		}
 
 	public function Cargar($id){//listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM viviendas where id= $id";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc==-1){

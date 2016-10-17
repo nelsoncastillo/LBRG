@@ -30,7 +30,7 @@ public function __construct(){
 }
 	// aqui puede buscar el ultimo de la tabla para tener el siguiente id disponible....
 	public function Ultimo(){
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT MAX(id) as maximo FROM docentes";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -47,7 +47,7 @@ public function __construct(){
 	}
 	
 	public function Buscar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM docentes where id = '$id';";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -63,7 +63,7 @@ public function __construct(){
 	}
 	
 	public function Eliminar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM docentes WHERE id='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	}	
@@ -71,7 +71,7 @@ public function __construct(){
 	public function Agregar($id,$tipo,$cedula,$nombre,$telefono){
 		//falta
 	//$id no deberia saberlo el usuario	
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "INSERT INTO docentes (id, tipo, cedula, nombre, telefono) VALUES ('$id','$tipo','$cedula','$nombre','$telefono')";
 	// deve validar que se afecto la tabla, 
 	if($resultadoc = $con->consultar($cadena)==-1) echo "Error agregando registro en tabla docentes";	
@@ -80,14 +80,14 @@ public function __construct(){
 
 	public function Actualizar($id,$tipo,$cedula,$nombre,$telefono){
 		//falta
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "UPDATE docentes SET id='$id', tipo='$tipo', cedula='$cedula', nombre='$nombre', telefono='$telefono' WHERE id='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	if($resultadoc==-1) echo "Error actualizando registro en tabla docentes";	
 		}
 
 	public function Cargar($id){//listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM docentes where id= $id";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc==-1){

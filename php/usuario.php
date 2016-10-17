@@ -11,7 +11,7 @@ private $_type; // en tabla  type
 
 	public function ValidarUsuario($nombre, $clave)
 	{
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM usuarios WHERE username = '$nombre' and password = '$clave' ";
 	//echo "<br>cadena sql: $cadena <br>";
 	$tb_usuarios=$con->consultar($cadena);

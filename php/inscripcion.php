@@ -26,7 +26,7 @@ public $_docente;
 
 // aqui puede buscar el ultimo de la tabla para tener el siguiente id disponible....
 	public function Ultimo(){
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT MAX(id) as maximo FROM inscripciones";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -43,7 +43,7 @@ public $_docente;
 	}
 	
 	public function Buscar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM inscripciones where id = '$id';";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -59,7 +59,7 @@ public $_docente;
 	}
 	
 	public function Eliminar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM inscripciones WHERE id='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	}	
@@ -68,7 +68,7 @@ public $_docente;
 	public function Agregar($id,$fecha_inscripcion,$anno_escolar,$docente_inscripcion){
 		//falta
 	//$id no deberia saberlo el usuario	
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "INSERT INTO inscripciones (id, fecha_ins_ini, anno_escolar, docente_incripcion) VALUES ('$id','$fecha_inscripcion','$anno_escolar','$docente_inscripcion')";
 	// deve validar que se afecto la tabla, 
 	if($resultadoc = $con->consultar($cadena)==-1) echo "Error agregando registro en tabla docentes";	
@@ -77,14 +77,14 @@ public $_docente;
 
 	public function Actualizar($id,$fecha_inscripcion,$anno_escolar,$docente_inscripcion){
 		//falta
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "UPDATE inscripciones SET id='$id', fecha_ins_ini='$fecha_inscripcion', anno_escolar='$anno_escolar', docente_incripcion='$docente_inscripcion' WHERE id='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	if($resultadoc==-1) echo "Error actualizando registro en tabla docentes";	
 		}
 
 	public function Cargar($id){//listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM inscripciones where id= $id";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc==-1){

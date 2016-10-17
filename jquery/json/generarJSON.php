@@ -8,7 +8,7 @@ $bd = "demo_json";
 //Creamos la conexión
 include_once("../../php/conexion.php");
 
-$conexion= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+$conexion= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 $cadena= "SELECT * FROM usuarios ORDER BY id";
 if (!$result = $conexion->consultar($cadena)) die();
 

@@ -11,16 +11,16 @@ echo git status
 echo git commit -m "HTML"
  
  
- echo "# UELibertador" 
+ echo "# LBRG" 
 git init
 git add .
-git commit -m "first commit UELibertador"
-git remote add origin https://github.com/nelsoncastillo/UELibertador.git
+git commit -m "first commit LBRG"
+git remote add origin https://github.com/nelsoncastillo/LBRG.git
 git push -u origin master
  
  
-echo git remote add origin https://github.com/nelsoncastillo/UELibertador
-echo git remote add origin git@github.com:nelsoncastillo/UELibertador
+echo git remote add origin https://github.com/nelsoncastillo/LBRG
+echo git remote add origin git@github.com:nelsoncastillo/LBRG
 echo git push origin master
 echo --git pull
 echo --git pull -u origin 

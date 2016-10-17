@@ -5,7 +5,7 @@ class DbConnection {
   private $db_host     = 'localhost';
   private $db_user     = 'junior';
   private $db_password = 'junior';
-  private $db_name     = 'UELibertador';
+  private $db_name     = 'LBRG';
   private $errors      = array();
   
 //  include_once("conexion.php");
@@ -23,7 +23,7 @@ class DbConnection {
   {
    // $datos_bd="host='$this->host' dbname='$this->bd' user='$this->usuario' password='$this->password'"
     //$link=pg_connect($datos_bd);
-    if ( !$this->db_connection = pg_connect('127.0.0.1', 'UELibertador', 'junior', 'junior') ) {
+    if ( !$this->db_connection = pg_connect('127.0.0.1', 'LBRG', 'junior', 'junior') ) {
       throw new RunTimeException("Couldn't connect to the database server");
     }
     //if ( !@mysql_select_db($this->db_name, $this->db_connection) ) {

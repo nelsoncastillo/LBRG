@@ -1,7 +1,7 @@
 <?php
 include_once("conexion.php");
 // contruyendo el encabezado de la tabla
-$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 //$cadena= "SELECT column_name , is_nullable, data_type, character_maximum_length ,udt_name  FROM information_schema.columns WHERE table_name = 'docentes' order by ordinal_position;";
 $tablita='docentes';
 $cadena="SELECT  distinct (a.attname) as column_name, t.typname as data_type, e.ordinal_position as orden,

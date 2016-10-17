@@ -21,7 +21,7 @@ $db_conf = array(
                     "server"     => "127.0.0.1",
                     "user"         => "junior",
                     "password"     => "junior",
-                    "database"     => "UELibertador"
+                    "database"     => "LBRG"
                 );
 
 $g = new jqgrid($db_conf);

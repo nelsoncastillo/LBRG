@@ -235,7 +235,7 @@ $(document).ready(function (){
 				<?php
 				include_once ("php/conexion.php");
 				$cadena = "SELECT id, fecha_ins_rat, id_inscripcion, docente_ratifica FROM ratificaciones ORDER BY id;";
-				$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+				$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 				$id_inscripcion='';	
 					$resultadoc = $con->consultar($cadena); 
 					if($resultadoc){

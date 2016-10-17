@@ -30,7 +30,7 @@ public $_tel_otro; // en tabla   Otro_Telefono
 		}
 	
 	public function Ultimo(){
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT MAX(id) as maximo FROM procedencias";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -47,7 +47,7 @@ public $_tel_otro; // en tabla   Otro_Telefono
 	}
 	
 	public function Buscar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM procedencias where id = '$id';";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -63,14 +63,14 @@ public $_tel_otro; // en tabla   Otro_Telefono
 	}
 	
 	public function Eliminar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM procedencias WHERE id='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	}	
 	
 	public function Agregar($id,$procedencia,$hermanos_plantel,$vive_con,$responsable_retirar,$cedula,$parentesco,$tel_local,$tel_celular,$tel_otro){//listo
 	//$id no deberia saberlo el usuario	
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "INSERT INTO procedencias (id, procedencia, hermanos_plantel,vive_con,responsable_retirar,cedula,parentesco,tel_local,tlf_celular,otro_telefono) VALUES ('$id','$procedencia','$hermanos_plantel','$vive_con','$responsable_retirar','$cedula','$parentesco','$tel_local','$tel_celular','$tel_otro')";
 	// deve validar que se afecto la tabla, 
 	if($resultadoc = $con->consultar($cadena)==-1) echo "Error agregando registro en tabla grupos";	
@@ -78,14 +78,14 @@ public $_tel_otro; // en tabla   Otro_Telefono
 		}
 
 	public function Actualizar($id,$procedencia,$hermanos_plantel,$vive_con,$responsable_retirar,$cedula,$parentesco,$tel_local,$tel_celular,$tel_otro){//listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "UPDATE procedencias SET id='$id', procedencia='$procedencia', hermanos_plantel='$hermanos_plantel', vive_con='$vive_con', responsable_retirar='$responsable_retirar', cedula='$cedula', parentesco='$parentesco', tel_local='$tel_local', tlf_celular='$tel_celular', otro_telefono='$tel_otro' WHERE id='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	if($resultadoc==-1) echo "Error actualizando registro en tabla procedencias";	
 		}
 
 	public function Cargar($id){//listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM procedencias where id= $id";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc==-1){

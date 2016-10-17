@@ -31,7 +31,7 @@ $this->_id=$this->Ultimo() +1;
 }
 	
 	public function Ultimo(){
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT COUNT(alumno) as maximo FROM procregistroalumno";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -48,7 +48,7 @@ $this->_id=$this->Ultimo() +1;
 	}
 	
 	public function Buscar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM procregistroalumno where alumno = '$id';";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -64,14 +64,14 @@ $this->_id=$this->Ultimo() +1;
 	}
 	
 	public function Eliminar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM procregistroalumno WHERE alumno='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	}	
 
 	public function Agregar($alumno,$representante,$procedencia,$vivienda,$habitacion){
 	//$id no deberia saberlo el usuario	
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "INSERT INTO procregistroalumno(alumno, representante, procedencia, vivienda, habitacion ) 
 	VALUES ('$alumno','$representante','$procedencia','$vivienda','$habitacion')";
 	// deve validar que se afecto la tabla, 
@@ -81,14 +81,14 @@ $this->_id=$this->Ultimo() +1;
 
 	public function Actualizar($alumno,$representante,$procedencia,$vivienda,$habitacion){
 		//falta
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "UPDATE procregistroalumno SET alumno='$alumno', representante='$representante', procedencia='$procedencia', vivienda='$vivienda', habitacion='$habitacion' WHERE alumno='$alumno';";
 	$resultadoc = $con->consultar($cadena); 	
 	if($resultadoc==-1) echo "Error actualizando registro en tabla procregistroalumno";	
 		}
 
 	public function Cargar($id){//listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM procregistroalumno where alumno= '$id'";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc==-1){

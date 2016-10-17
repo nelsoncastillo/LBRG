@@ -43,7 +43,7 @@ public $_vive_con; // en tabla Vive  con el niñ@?
 	
 
 	public function Buscar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM representantes where cedula = '$id';";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -59,7 +59,7 @@ public $_vive_con; // en tabla Vive  con el niñ@?
 	}
 		
 	public function Eliminar($id){ //Liisto
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM representantes WHERE cedula='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 		}		
@@ -67,7 +67,7 @@ public $_vive_con; // en tabla Vive  con el niñ@?
 	public function get_Representante($id){ //Listo
 	// obtiene el alumno de la tabla desde id
 	//si existe llena el objeto
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM representantes WHERE cedula = '$id' ;";
 	$resultadoc = $con->consultar($cadena); 	
 	if ($resultadoc) { $cont=$con->contar($resultadoc);
@@ -105,7 +105,7 @@ public $_vive_con; // en tabla Vive  con el niñ@?
 public function Agregar($cedula,$nombre,$apellido,$fecha_nacimiento,$pais,$estado,$estado_civil,$genero,$parentesco,$telefono_local,$tel_cel,$oficio,$empresa,$dir_trabajo,$tel_trabajo,$correo,$vive_con){
 	//Listo
 	//$id no deberia saberlo el usuario	
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 
 	$cadena= 'INSERT INTO representantes (cedula, nombre, apellido, nacimiento, pais, estado, estado_civil,genero, parentesco, telefono, celular, oficio, empresa, telefono_trabajo, direccion_trabajo, correo, vive )';
 	$cadena.= " VALUES ('$cedula','$nombre','$apellido','$fecha_nacimiento','$pais','$estado','$estado_civil','$genero','$parentesco','$telefono_local','$tel_cel','$oficio','$empresa','$tel_trabajo','$dir_trabajo','$correo','$vive_con');";
@@ -118,7 +118,7 @@ public function Agregar($cedula,$nombre,$apellido,$fecha_nacimiento,$pais,$estad
 public function Actualizar($cedula,$nombre,$apellido,$fecha_nacimiento,$pais,$estado,$estado_civil,$genero,$parentesco,$telefono_local,$tel_cel,$oficio,$empresa,$dir_trabajo,$tel_trabajo,$correo,$vive_con){
 	//Listo
 	//$id no deberia saberlo el usuario	
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 
 	$cadena= "UPDATE representantes
 	SET cedula='$cedula', nombre= '$nombre', apellido='$apellido' , nacimiento= '$fecha_nacimiento', pais= '$pais', 

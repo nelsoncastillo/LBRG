@@ -11,7 +11,7 @@ public $_turno; // en tabla Turno
 
 	public function Agregar($id,$grupo,$seccion,$periodo,$turno){//listo
 	//$id no deberia saberlo el usuario	
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "INSERT INTO grupos (id, grupo, seccion, periodo, turno) VALUES ('$id','$grupo','$seccion','$periodo','$turno')";
 	// deve validar que se afecto la tabla, 
 	if($resultadoc = $con->consultar($cadena)==-1) echo "Error agregando registro en tabla grupos";	
@@ -19,21 +19,21 @@ public $_turno; // en tabla Turno
 		}
 		
 	public function Actualizar($id,$grupo,$seccion,$periodo,$turno){//listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "UPDATE grupos SET id='$id', grupo='$grupo', seccion='$seccion', periodo='$periodo', turno='$turno' WHERE id= '$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	if($resultadoc==-1) echo "Error actualizando registro en tabla grupos";	
 		}
 		
 	public function Eliminar($id){//listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM grupos WHERE id='$id';";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc==-1) echo "Error eliminando registro en tabla grupos";	
 		}
 		
 	public function Leer($id){//listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM grupos where id = '$id';";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -50,7 +50,7 @@ public $_turno; // en tabla Turno
 	}
 	
 	public function CargarGrupo($id){//listo
-			$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+			$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM grupos where id= $id";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc==-1){
@@ -69,7 +69,7 @@ public $_turno; // en tabla Turno
 	}
 		
 	public function LeerTodos(){
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM grupos";
 	print $cadena;
 	$resultadoc = $con->consultar($cadena); 
@@ -94,7 +94,7 @@ public $_turno; // en tabla Turno
 		  CONSTRAINT curso PRIMARY KEY ("Id_grupo" )
 		)
 		* */
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= 'INSERT INTO Cursos ("Id_grupo", "Id_Alumno", "Anno_Escolar","Id_Docente", "Id_Auxiliar")';
 	$cadena.= ' VALUES ('.$idgrupo.', '.$idalumno.', '.$anno.','.$docente.','.$aux.');';
 	$resultadoc = $con->consultar($cadena);
@@ -102,7 +102,7 @@ public $_turno; // en tabla Turno
 		}
 		
 	public function EliminarCurso($idgrupo){
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM cursos WHERE Id_grupo='.$idgrupo.';";
 	$resultadoc = $con->consultar($cadena); 	
 		}

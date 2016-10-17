@@ -25,7 +25,7 @@ CREATE TABLE asignar_beca
 			}
 	
 	public function Buscar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM asignar_beca where alumno = '$id';";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -42,7 +42,7 @@ CREATE TABLE asignar_beca
 	
 	
 	public function Eliminar($id){ 
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM asignar_beca WHERE alumno='$id';";
 	$resultadoc = $con->consultar($cadena); 
 	$actualiza_alumnos ="UPDATE alumnos SET beca='No' WHERE id='$id';";
@@ -51,7 +51,7 @@ CREATE TABLE asignar_beca
 	}
 	
 	public function Agregar($id,$cedula_escolar,$beca){
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "INSERT INTO asignar_beca( alumno, cedulaescolar, beca) VALUES ('$id','$cedula_escolar','$beca');";
 	// deve validar que se afecto la tabla, 
 	if($resultadoc = $con->consultar($cadena)==-1) echo "Error agregando registro en tabla asignar_canaima";	
@@ -61,7 +61,7 @@ CREATE TABLE asignar_beca
 		}
 	
 	public function Actualizar($id,$cedula_escolar,$beca){
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "UPDATE asignar_beca SET alumno='$id', cedulaescolar='$cedula_escolar', beca='$beca' WHERE alumno='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	if($resultadoc==-1) echo "Error actualizando registro en tabla asignar_beca";
@@ -72,7 +72,7 @@ CREATE TABLE asignar_beca
 		
 	
 	public function Cargar($id){
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM asignar_beca where alumno= $id";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc==-1){

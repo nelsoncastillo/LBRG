@@ -22,7 +22,7 @@ public $_zona;
 		}
 
 	public function Actualizar($id,$estado,$municipio,$parroquia,$tipo_vivienda,$zona){//listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena="UPDATE datos_habitacion SET id='$id', estado='$estado', municipio='$municipio', parroquia='$parroquia', tipo_vivienda='$tipo_vivienda', zona='$zona' WHERE id='$id'";
 	$resultadoc = $con->consultar($cadena); 	
 	if($resultadoc==-1) echo "Error actualizando registro en tabla datos_habitacion";	
@@ -30,7 +30,7 @@ public $_zona;
 		
 	public function Agregar($id,$estado,$municipio,$parroquia,$tipo_vivienda,$zona){//listo
 	//$id no deberia saberlo el usuario	
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "INSERT INTO datos_habitacion (id, estado, municipio,parroquia,tipo_vivienda,zona) VALUES ('$id','$estado','$municipio','$parroquia','$tipo_vivienda','$zona')";
 	// deve validar que se afecto la tabla, 
 	if($resultadoc = $con->consultar($cadena)==-1) echo "Error agregando registro en datos_habitacion";	
@@ -38,7 +38,7 @@ public $_zona;
 		}	
 		
 	public function Ultimo(){
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT MAX(id) as maximo FROM datos_habitacion";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -55,7 +55,7 @@ public $_zona;
 	}
 	
 	public function Buscar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM datos_habitacion where id = '$id';";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -71,7 +71,7 @@ public $_zona;
 	}
 	
 	public function Eliminar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM datos_habitacion WHERE id='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	}	
@@ -88,7 +88,7 @@ CREATE TABLE datos_habitacion
   CONSTRAINT pk_id_procedencia PRIMARY KEY (id )
  * */
 	public function Cargar($id){//listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM datos_habitacion WHERE id= $id";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc==-1){

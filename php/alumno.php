@@ -96,7 +96,7 @@ public function _calcularEdad()
 public function get_Alumno($id){ //Validar
 	// obtiene el alumno de la tabla desde id
 	//si existe devuelve el objeto
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM alumnos WHERE id= $id;";
 	$resultadoc = $con->consultar($cadena); 	
 	if ($resultadoc) { $cont=$con->contar($resultadoc);
@@ -142,7 +142,7 @@ public function get_Alumno($id){ //Validar
 public function Agregar($id,$nombre,$apellido,$sexo,$ciescolar,$fecha_nacimiento,$pais,$estado,$ciudad,$orden_nacimiento,$tipo_parto,$numero_parto,$multiple_parto,$problemas_lenguaje,$problemas_vision,$problemas_parto,$tratamiento_medico, $tratamiento_odontologico,$tratamiento_psicologico,$enfermedades,$control_vacunas,$alergias,$talla,$peso,$responsable_primeros,$beca,$canaima){
 	//Listo
 	//$id no deberia saberlo el usuario	
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= 'INSERT INTO alumnos (id, nombres, apellidos, sexo, ciescolar, fecha_nacimiento, pais, estado, ciudad, orden_nacimiento, tipo_parto, multiple_parto, numero_parto, problemas_lenguaje, problemas_vision, problemas_parto, tratamiento_medico, tratamiento_odontologico, tratamiento_psicologico, enfermedades, control_vacunas, alergias, talla, peso, responsable_primeros, beca, canaima )';
 	$cadena.= " VALUES ('$id','$nombre','$apellido','$sexo','$ciescolar','$fecha_nacimiento','$pais','$estado','$ciudad','$orden_nacimiento','$tipo_parto','$multiple_parto','$numero_parto','$problemas_lenguaje','$problemas_vision','$problemas_parto','$tratamiento_medico', '$tratamiento_odontologico','$tratamiento_psicologico','$enfermedades','$control_vacunas','$alergias','$talla','$peso','$responsable_primeros','$beca','$canaima');";
 	//echo $cadena;
@@ -152,7 +152,7 @@ public function Agregar($id,$nombre,$apellido,$sexo,$ciescolar,$fecha_nacimiento
 		}
 
 public function Leer($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM alumnos where id = '$id';";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -170,7 +170,7 @@ public function Leer($id){ //Listo
 
 		
 public function Eliminar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM alumnos WHERE id='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 		}
@@ -178,7 +178,7 @@ public function Eliminar($id){ //Listo
 public function Actualizar($id,$nombre,$apellido,$sexo,$ciescolar,$fecha_nacimiento,$pais,$estado,$ciudad,$orden_nacimiento,$tipo_parto,$numero_parto,$multiple_parto,$problemas_lenguaje,$problemas_vision,$problemas_parto,$tratamiento_medico, $tratamiento_odontologico,$tratamiento_psicologico,$enfermedades,$control_vacunas,$alergias,$talla,$peso,$responsable_primeros,$beca,$canaima){
 
 	//$id no deberia saberlo el usuario	
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "UPDATE alumnos set id='$id', nombres='$nombre', apellidos='$apellido', sexo='$sexo', ciescolar='$ciescolar', fecha_nacimiento='$fecha_nacimiento', pais='$pais', estado='$estado', ciudad='$ciudad', orden_nacimiento='$orden_nacimiento', tipo_parto='$tipo_parto', multiple_parto='$multiple_parto', numero_parto='$numero_parto', problemas_lenguaje='$problemas_lenguaje', problemas_vision='$problemas_vision', problemas_parto='$problemas_parto', tratamiento_medico='$tratamiento_medico', tratamiento_odontologico='$tratamiento_odontologico', tratamiento_psicologico='$tratamiento_psicologico', enfermedades='$enfermedades', control_vacunas='$control_vacunas', alergias='$alergias', talla='$talla', peso='$peso', responsable_primeros='$responsable_primeros', beca='$beca', canaima='$canaima' ";
 	$cadena.= " WHERE id='$id';";
 	//echo $cadena;

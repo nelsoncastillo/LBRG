@@ -28,7 +28,7 @@ public $_idalumno;
 	public function BuscarAlumno($id){ 
 		//Busca un alumno paar determinar si esta 
 		//en algun otro grupo, o aun no se registra en alguno
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM procinscripciones where idalumno = '$id';";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -46,7 +46,7 @@ public $_idalumno;
 	public function BuscarSeccion($id){ 
 		//Busca un alumno paar determinar si esta 
 		//en algun otro grupo, o aun no se registra en alguno
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM procinscripcionview where idgrupo = '$id';";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -63,27 +63,27 @@ public $_idalumno;
 	}
 	
 	public function Eliminar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM procinscripciones WHERE idinscripcion='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	}	
   	
   	public function EliminarAlumno($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM procinscripciones WHERE idalumno='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	}	
 	
 	public function Agregar($idgrupo,$idinscripcion,$idalumno){
 		//falta
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "INSERT INTO procinscripciones (idgrupo, idinscripcion, idalumno,ratificado) VALUES ('$idgrupo','$idinscripcion','$idalumno','0')";
 	if($resultadoc = $con->consultar($cadena)==-1) echo "Error agregando registro en tabla procinscripciones";	
 		}
 
 	public function Actualizar($idgrupo,$idinscripcion,$idalumno){
 		//falta
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "UPDATE procinscripciones SET idgrupo='$idgrupo', idinscripcion='$idinscripcion', idalumno='$idalumno'  
 	WHERE idgrupo='$idgrupo' and idalumno='$idalumno' ;";
 	$resultadoc = $con->consultar($cadena); 	
@@ -91,7 +91,7 @@ public $_idalumno;
 		}
 
 	public function Cargar($idalumno){//listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM procinscripciones where  idalumno='$idalumno' ";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc==-1){
@@ -109,7 +109,7 @@ public $_idalumno;
 	
 	public function VaciarSeccion($id){ 
 		//Elimina un grupo completo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM procinscripciones WHERE idgrupo='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	}	

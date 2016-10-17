@@ -33,7 +33,7 @@ public $_observaciones;
 	public function Buscar($id){ 
 		//Busca un alumno paar determinar si esta 
 		//en algun otro grupo, o aun no se registra en alguno
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM ratificaciones where id = '$id';";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -49,7 +49,7 @@ public $_observaciones;
 	}
 	
 	public function Cargar($id){//listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM ratificaciones where  id= '$id' ";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc==-1){
@@ -70,7 +70,7 @@ public $_observaciones;
 	public function BuscarAlumno($id){ 
 		//Busca un alumno paar determinar si esta 
 		//en algun otro grupo, o aun no se registra en alguno
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM procratificacionview where idalumno = '$id';";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -86,13 +86,13 @@ public $_observaciones;
 	}
 	
 	public function Agregar($idalumno,$idratificacion){
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= " UPDATE procinscripciones SET ratificado='True', idratificacion='$idratificacion' WHERE idalumno='$idalumno' ; ";
 	if($resultadoc = $con->consultar($cadena)==-1) echo "Error agregando registro en tabla procinscripciones";	
 		}
 	
   	public function EliminarAlumno($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM procinscripciones WHERE idalumno='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	}	
@@ -100,7 +100,7 @@ public $_observaciones;
 
 	public function VaciarSeccion($id){ 
 		//Elimina un grupo completo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM procinscripciones WHERE idgrupo='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	}	

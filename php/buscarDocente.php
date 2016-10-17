@@ -18,7 +18,7 @@ if (isset($consultaBusqueda)) {
 	//Selecciona de la tabla docentes
 	//donde el nombre sea igual a $consultaBusqueda, 
 	$cadena = "SELECT id, nombre, cedula FROM docentes WHERE nombre LIKE '%$consultaBusqueda%' ";
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
 	$cont=$con->contar($resultadoc);

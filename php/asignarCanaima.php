@@ -24,7 +24,7 @@ CREATE TABLE asignar_canaima
 			}
 	
 	public function Buscar($id){ //Listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM asignar_canaima where alumno = '$id';";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
@@ -41,7 +41,7 @@ CREATE TABLE asignar_canaima
 	
 	
 	public function Eliminar($id){ 
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM asignar_canaima WHERE alumno='$id';";
 	$resultadoc = $con->consultar($cadena); 
 	$actualiza_alumnos ="UPDATE alumnos SET canaima='No' WHERE id='$id';";
@@ -50,7 +50,7 @@ CREATE TABLE asignar_canaima
 	}
 	
 	public function Agregar($id,$cedula_escolar,$serial_canaima){
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "INSERT INTO asignar_canaima( alumno, cedulaescolar, serial) VALUES ('$id','$cedula_escolar','$serial_canaima');";
 	// deve validar que se afecto la tabla, 
 	if($resultadoc = $con->consultar($cadena)==-1) echo "Error agregando registro en tabla asignar_canaima";	
@@ -60,7 +60,7 @@ CREATE TABLE asignar_canaima
 		}
 	
 	public function Actualizar($id,$cedula_escolar,$serial_canaima){
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "UPDATE asignar_canaima SET alumno='$id', cedulaescolar='$cedula_escolar', serial='$serial_canaima' WHERE alumno='$id';";
 	$resultadoc = $con->consultar($cadena); 	
 	if($resultadoc==-1) echo "Error actualizando registro en tabla asignar_canaima";
@@ -71,7 +71,7 @@ CREATE TABLE asignar_canaima
 		
 	
 	public function Cargar($id){
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM asignar_canaima where alumno= $id";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc==-1){

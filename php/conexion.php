@@ -9,7 +9,7 @@
         var $link;//almacenamos el link para luego destruirlo
         var $RecCount; //contador de registros
             //constructor en el constructor colocamos los datos por defecto, a fin de recibir de manera opcional
-        function __construct($host='127.0.0.1', $bd='UELibertador', $user='junior', $pass='junior')
+        function __construct($host='127.0.0.1', $bd='LBRG', $user='junior', $pass='junior')
         {
                 //asigno valores para ensamblar el string de conexion
                 $this->host=$host;

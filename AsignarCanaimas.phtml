@@ -114,7 +114,7 @@
 	// de la lista y pasar a esta tabla.
 	//debe correr debajo de <tbody class="list">
 	include_once ("php/conexion.php");
-        $con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+        $con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
         $cadena="SELECT a.id, a.ciescolar, a.nombres, a.apellidos, asignar_canaima.serial
                  FROM  asignar_canaima  
                  right join alumnos as a on (asignar_canaima.alumno= a.id )";

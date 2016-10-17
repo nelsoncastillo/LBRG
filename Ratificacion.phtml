@@ -76,7 +76,7 @@
 <?php
 include_once ("php/conexion.php");
 $cadena = "SELECT * FROM inscripciones ORDER BY id;";
-$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
 	$cont=$con->contar($resultadoc);
@@ -115,7 +115,7 @@ $con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
 <?php
 include_once ("php/conexion.php");
 $cadena = "SELECT id, nombre, cedula FROM docentes ORDER BY id;";
-$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc){
 	$cont=$con->contar($resultadoc);

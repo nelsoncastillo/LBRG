@@ -19,7 +19,7 @@ a:link {
 <? 
 include_once("conexion.php");
 
-$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 $cadena= "SELECT * FROM usuarios ORDER BY id";
 $resultadoc = $con->consultar($cadena); //mysql_query($cadena,$con);
 if ($resultadoc) { $cont=$con->contar($resultadoc);
@@ -141,7 +141,7 @@ $modo=$_GET['modo'];
 if ($modo=="a")
 {
 include_once("conexion.php");
-$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 $id=$_GET['id'];
 $usuario=$_GET['usuario'];
 $tipo=$_GET['tipo'];
@@ -156,7 +156,7 @@ header("location:gridusr.php");
 if ($modo=="u")
 {
 include_once("conexion.php");	
-$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 $id=$_GET['id'];
 $usuario=$_GET['usuario'];
 $tipo=$_GET['tipo'];
@@ -229,13 +229,13 @@ if ($_SESSION['tipo']=='admin'){
 include_once("conexion.php");	
 $id=$_GET['id'];
 $wsql="SELECT * FROM productos WHERE idcategoria = '$id'";
-$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 $resultado = $con->consultar($wsql); 
 $row=pg_fetch_object($resultado);
 if ($row==0)
 {
 	$nombre=$_POST['usuario'];
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "DELETE FROM usuarios WHERE id = '$id'";
 	$resultado = $con->consultar($cadena); 
 

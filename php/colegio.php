@@ -38,7 +38,7 @@ public function __construct(){
 	
 
 	public function Cargar(){//listo
-	$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+	$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 	$cadena= "SELECT * FROM colegio where id='1'";
 	$resultadoc = $con->consultar($cadena); 
 	if($resultadoc==-1){

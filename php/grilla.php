@@ -24,7 +24,7 @@ public function set_Manejador($manejador){
 public function crear_grilla($tabla,$orden=0,$campoBy=''){
 $this->tabla= $tabla;
 // contruyendo el encabezado de la tabla
-$con= new Conector_pg('127.0.0.1', 'UELibertador', 'junior', 'junior');
+$con= new Conector_pg('127.0.0.1', 'LBRG', 'junior', 'junior');
 $cadena="SELECT  distinct (a.attname) as column_name, t.typname as data_type, e.ordinal_position as orden,
 CASE
 WHEN cc.contype= 'p' THEN 'PRI'
